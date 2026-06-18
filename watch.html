@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Watch Live Stream - KickOff LIVE</title>
+    <meta name="description" content="Watch live streaming match feeds and check match information for fixtures in Indian Standard Time (IST).">
+    <meta name="keywords" content="live stream, watch football, kickoff live stream, soccer live free, watch f1 live">
+    <meta name="robots" content="noindex, follow"> <!-- Avoid indexing duplicate query param pages but follow links -->
+    <link rel="canonical" href="https://kickofflive.com/watch.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="video.other">
+    <meta property="og:title" content="Watch Live Stream - KickOff LIVE">
+    <meta property="og:description" content="Watch free live streams on KickOff LIVE in HD quality.">
+    <meta property="og:image" content="https://images.dmca.com/Badges/dmca_protected_sml_120i.png?ID=37b234be-f6ad-49ac-8d48-9396615af619">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2310b981'/%3E%3Cstop offset='100%25' stop-color='%23059669'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Cpath d='M17 5 L9 17 H15 L13 27 L23 13 H17 Z' fill='%230c0f0d'/%3E%3C/svg%3E">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1 class="logo-wrap" style="font-size: 21px; margin: 0;">
+            <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px;">
+                <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
+                KickOff<span>LIVE</span>
+            </a>
+        </h1>
+        <div class="ist-badge">
+            <i class="fa-solid fa-clock"></i> Indian Standard Time (IST)
+        </div>
+    </header>
+
+    <main class="main-container">
+        <div class="watch-container">
+            <a href="index.html" class="back-link">
+                <i class="fa-solid fa-chevron-left"></i> Back to Schedule
+            </a>
+
+            <div id="match-detail-card" class="match-hero-card">
+                <!-- Match Details will load dynamically via watch.js -->
+                <div class="hero-status">
+                    <span class="hero-tag date">Loading Match Detail...</span>
+                </div>
+                <div class="hero-teams-wrap">
+                    <div class="hero-team">
+                        <div class="hero-flag-img" style="background: rgba(255,255,255,0.05); width: 72px; height: 48px; border-radius: 6px;"></div>
+                        <span class="hero-team-name">Loading Home...</span>
+                    </div>
+                    <div class="hero-score-center">
+                        <span class="hero-vs">vs</span>
+                    </div>
+                    <div class="hero-team">
+                        <div class="hero-flag-img" style="background: rgba(255,255,255,0.05); width: 72px; height: 48px; border-radius: 6px;"></div>
+                        <span class="hero-team-name">Loading Away...</span>
+                    </div>
+                </div>
+                <p class="hero-match-info">Group Stage</p>
+                
+                <div class="watch-link-wrapper">
+                    <!-- Dynamic Stream Link will render here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-text">
+                <p><strong>KickOff LIVE</strong> • We host live stream matches and aggregate international football
+                    broadcast schedules calculated specifically for Indian sports fans.</p>
+                <p class="copyright">&copy; 2026 KickOff LIVE. All rights reserved.</p>
+            </div>
+            <div class="footer-compliance">
+                <a href="terms.html" target="_blank" class="terms-link">Terms of Service</a>
+                <a href="privacy.html" target="_blank" class="terms-link">Privacy Policy</a>
+                <a href="contact.html" target="_blank" class="terms-link">Contact Us</a>
+                <a href="dmca.html" target="_blank" title="DMCA.com Protection Status" class="dmca-badge">
+                    <img src="https://images.dmca.com/Badges/dmca_protected_sml_120i.png?ID=37b234be-f6ad-49ac-8d48-9396615af619" alt="DMCA.com Protection Status" />
+                </a>
+                <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"></script>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Load matches database and page controller -->
+    <script src="script.js"></script>
+    <script src="watch.js"></script>
+</body>
+
+</html>
