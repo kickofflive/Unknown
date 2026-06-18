@@ -16,7 +16,7 @@ const currentFixturesData = [
         info: "Group A",
         time: "Today 9:30 PM IST",
         kickoff: `${todayStr}T21:30:00+05:30`,
-        homeScore: 0,
+        homeScore: 1,
         awayScore: 0,
         streamLink: "aHR0cHM6Ly9saXZlMi50b3RhbHNwb3J0ZWsubmV4dXMvQ3plY2gtUmVwdWJsaWMtdnMtU291dGgtQWZyaWNhLzY4NzU0"
     },
