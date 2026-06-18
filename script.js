@@ -18,7 +18,7 @@ const currentFixturesData = [
         kickoff: `${todayStr}T21:30:00+05:30`,
         homeScore: 0,
         awayScore: 0,
-        streamLink: "aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1kUXc0dzlXZ1hjUQ=="
+        streamLink: "aHR0cHM6Ly9saXZlMi50b3RhbHNwb3J0ZWsubmV4dXMvQ3plY2gtUmVwdWJsaWMtdnMtU291dGgtQWZyaWNhLzY4NzU0"
     },
     {
         id: 206,
