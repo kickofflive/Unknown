@@ -7,50 +7,61 @@ const todayStr = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2
 const tomorrowDate = new Date(now.getTime() + 24 * 60 * 60 * 1000);
 const tomorrowStr = tomorrowDate.getFullYear() + '-' + String(tomorrowDate.getMonth() + 1).padStart(2, '0') + '-' + String(tomorrowDate.getDate()).padStart(2, '0');
 
+// Helper to get correct country flag URL (handling special regions like Scotland)
+function getFlagUrl(isoCode) {
+    if (!isoCode) return "";
+    const code = isoCode.trim().toUpperCase();
+    if (code === "GB-SCT") {
+        return "https://flagcdn.com/w64/gb-sct.png";
+    }
+    return `https://flagsapi.com/${code}/flat/64.png`;
+}
+
 // Dynamically generated fixtures to keep the app fresh and automatically ongoing
 const currentFixturesData = [
     {
-        id: 205,
-        home: "Czechia", homeIso: "CZ",
-        away: "South Africa", awayIso: "ZA",
-        info: "Group A",
-        time: "Today 9:30 PM IST",
-        kickoff: `${todayStr}T21:30:00+05:30`,
-        homeScore: 1,
-        awayScore: 0,
-        streamLink: "aHR0cHM6Ly9saXZlMi50b3RhbHNwb3J0ZWsubmV4dXMvQ3plY2gtUmVwdWJsaWMtdnMtU291dGgtQWZyaWNhLzY4NzU0"
-    },
-    {
         id: 206,
-        home: "Switzerland", homeIso: "CH",
-        away: "Bosnia and Herzegovina", awayIso: "BA",
-        info: "Group B",
+        home: "USA", homeIso: "US",
+        away: "Australia", awayIso: "AU",
+        info: "Group D",
         time: "Tomorrow 12:30 AM IST",
         kickoff: `${tomorrowStr}T00:30:00+05:30`,
-        homeScore: 0,
-        awayScore: 0,
         streamLink: "I2g="
     },
     {
         id: 207,
-        home: "Canada", homeIso: "CA",
-        away: "Qatar", awayIso: "QA",
-        info: "Group B",
+        home: "Scotland", homeIso: "GB-SCT",
+        away: "Morocco", awayIso: "MA",
+        info: "Group C",
         time: "Tomorrow 03:30 AM IST",
         kickoff: `${tomorrowStr}T03:30:00+05:30`,
-        homeScore: 0,
-        awayScore: 0,
         streamLink: "I2g="
     },
     {
         id: 208,
-        home: "Mexico", homeIso: "MX",
-        away: "South Korea", awayIso: "KR",
-        info: "Group A",
-        time: "Tomorrow 06:30 AM IST",
-        kickoff: `${tomorrowStr}T06:30:00+05:30`,
-        homeScore: 0,
-        awayScore: 0,
+        home: "Brazil", homeIso: "BR",
+        away: "Haiti", awayIso: "HT",
+        info: "Group C",
+        time: "Tomorrow 06:00 AM IST",
+        kickoff: `${tomorrowStr}T06:00:00+05:30`,
+        streamLink: "I2g="
+    },
+    {
+        id: 209,
+        home: "Türkiye", homeIso: "TR",
+        away: "Paraguay", awayIso: "PY",
+        info: "Group D",
+        time: "Tomorrow 08:30 AM IST",
+        kickoff: `${tomorrowStr}T08:30:00+05:30`,
+        streamLink: "I2g="
+    },
+    {
+        id: 210,
+        home: "Netherlands", homeIso: "NL",
+        away: "Sweden", awayIso: "SE",
+        info: "Group F",
+        time: "Tomorrow 10:30 PM IST",
+        kickoff: `${tomorrowStr}T22:30:00+05:30`,
         streamLink: "I2g="
     }
 ];
@@ -205,17 +216,15 @@ function renderMatchCards() {
                     <div class="team-container">
                         <div class="team-line">
                             <div class="team-details">
-                                <img class="flag-img" src="https://flagsapi.com/${match.homeIso}/flat/64.png" alt="Flag" loading="lazy" onerror="this.src='https://placehold.co/28x18?text=${match.homeIso}'">
+                                <img class="flag-img" src="${getFlagUrl(match.homeIso)}" alt="Flag" loading="lazy" onerror="this.src='https://placehold.co/28x18?text=${match.homeIso}'">
                                 <span class="team-name">${match.home}</span>
                             </div>
-                            <span class="score-box ${isLive ? 'live-score' : ''}">${isLive ? match.homeScore : '-'}</span>
                         </div>
                         <div class="team-line">
                             <div class="team-details">
-                                <img class="flag-img" src="https://flagsapi.com/${match.awayIso}/flat/64.png" alt="Flag" loading="lazy" onerror="this.src='https://placehold.co/28x18?text=${match.awayIso}'">
+                                <img class="flag-img" src="${getFlagUrl(match.awayIso)}" alt="Flag" loading="lazy" onerror="this.src='https://placehold.co/28x18?text=${match.awayIso}'">
                                 <span class="team-name">${match.away}</span>
                             </div>
-                            <span class="score-box ${isLive ? 'live-score' : ''}">${isLive ? match.awayScore : '-'}</span>
                         </div>
                     </div>
                 </div>
@@ -402,28 +411,7 @@ function updateTimers() {
 
 // Dynamic score updater simulation
 function startLiveSimulation() {
-    setInterval(() => {
-        let updated = false;
-
-        // Football Match simulation
-        currentFixturesData.forEach(match => {
-            if (getMatchStatus(match) === "LIVE") {
-                if (Math.random() < 0.08) {
-                    if (Math.random() < 0.5) {
-                        match.homeScore += 1;
-                    } else {
-                        match.awayScore += 1;
-                    }
-                    updated = true;
-                }
-            }
-        });
-
-        if (updated) {
-            renderMatchCards();
-            renderF1Cards();
-        }
-    }, 10000);
+    // Score simulation removed as the score system is removed completely
 }
 
 // FAQ Accordion Toggle Mechanics
