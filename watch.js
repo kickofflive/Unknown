@@ -92,9 +92,7 @@ function initWatchPage() {
         : `<span class="hero-tag upcoming" id="watch-countdown" data-kickoff="${match.kickoff}"><i class="fa-regular fa-clock"></i> Loading Countdown...</span>`;
 
     // 3. Set Up Score Center area
-    const scoreCenterHtml = isLive
-        ? `<span id="live-score-display">${match.homeScore} <span style="margin: 0 10px; color: var(--text-dim); font-size: 20px;">-</span> ${match.awayScore}</span>`
-        : `<span class="hero-vs">vs</span>`;
+    const scoreCenterHtml = `<span class="hero-vs">vs</span>`;
 
     // 4. Set Up Link section below match card
     let linkHtml = "";
@@ -121,14 +119,14 @@ function initWatchPage() {
         </div>
         <div class="hero-teams-wrap">
             <div class="hero-team">
-                <img class="hero-flag-img" src="https://flagsapi.com/${match.homeIso}/flat/64.png" alt="${match.home} flag" onerror="this.src='https://placehold.co/72x48?text=${match.homeIso}'">
+                <img class="hero-flag-img" src="${getFlagUrl(match.homeIso)}" alt="${match.home} flag" onerror="this.src='https://placehold.co/72x48?text=${match.homeIso}'">
                 <span class="hero-team-name">${match.home}</span>
             </div>
             <div class="hero-score-center">
                 ${scoreCenterHtml}
             </div>
             <div class="hero-team">
-                <img class="hero-flag-img" src="https://flagsapi.com/${match.awayIso}/flat/64.png" alt="${match.away} flag" onerror="this.src='https://placehold.co/72x48?text=${match.awayIso}'">
+                <img class="hero-flag-img" src="${getFlagUrl(match.awayIso)}" alt="${match.away} flag" onerror="this.src='https://placehold.co/72x48?text=${match.awayIso}'">
                 <span class="hero-team-name">${match.away}</span>
             </div>
         </div>
@@ -139,16 +137,9 @@ function initWatchPage() {
         </div>
     `;
 
-    // 6. Start watch page countdown timer or score update loop
+    // 6. Start watch page countdown timer
     if (!isLive) {
         startWatchCountdown();
-    } else {
-        setInterval(() => {
-            const scoreDisplayEl = document.getElementById("live-score-display");
-            if (scoreDisplayEl) {
-                scoreDisplayEl.innerHTML = `${match.homeScore} <span style="margin: 0 10px; color: var(--text-dim); font-size: 20px;">-</span> ${match.awayScore}`;
-            }
-        }, 5000);
     }
 }
 
