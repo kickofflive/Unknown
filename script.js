@@ -24,7 +24,7 @@ const currentFixturesData = [
         home: "USA", homeIso: "US",
         away: "Australia", awayIso: "AU",
         info: "Group D",
-        time: "Tomorrow 12:30 AM IST",
+        time: "Today 12:30 AM IST",
         kickoff: `${tomorrowStr}T00:30:00+05:30`,
         streamLink: "aHR0cHM6Ly9nb2FsbGl2ZWhkLnNpdGUvc3RyZWFtL2dvYWxsaXZlaGQtc2l0ZS11c2EtdnMtYXVzdHJhbGlhLTYzNjc2MjE0NDItMzI4MTg1"
     },
