@@ -26,7 +26,7 @@ const currentFixturesData = [
         info: "Group F",
         time: "Today 10:30 PM IST",
         kickoff: `${todayStr}T22:30:00+05:30`,
-        streamLink: "I2g="
+        streamLink: "aHR0cHM6Ly9leHRyZW1lc3BvcnRzdHYub25saW5lL3N0cmVhbS9leHRyZW1lc3BvcnRzdHYtb25saW5lLW5ldGhlcmxhbmRzLXZzLXN3ZWRlbi0xMTA1NjQ5MjU2LTgzMzQxOA=="
     },
     {
         id: 207,
