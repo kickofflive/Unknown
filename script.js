@@ -21,47 +21,47 @@ function getFlagUrl(isoCode) {
 const currentFixturesData = [
     {
         id: 206,
-        home: "USA", homeIso: "US",
-        away: "Australia", awayIso: "AU",
-        info: "Group D",
-        time: "Today 12:30 AM IST",
-        kickoff: `${tomorrowStr}T00:30:00+05:30`,
-        streamLink: "aHR0cHM6Ly9nb2FsbGl2ZWhkLnNpdGUvc3RyZWFtL2dvYWxsaXZlaGQtc2l0ZS11c2EtdnMtYXVzdHJhbGlhLTYzNjc2MjE0NDItMzI4MTg1"
+        home: "Netherlands", homeIso: "NL",
+        away: "Sweden", awayIso: "SE",
+        info: "Group F",
+        time: "Today 10:30 PM IST",
+        kickoff: `${todayStr}T22:30:00+05:30`,
+        streamLink: "I2g="
     },
     {
         id: 207,
-        home: "Scotland", homeIso: "GB-SCT",
-        away: "Morocco", awayIso: "MA",
-        info: "Group C",
-        time: "Tomorrow 03:30 AM IST",
-        kickoff: `${tomorrowStr}T03:30:00+05:30`,
+        home: "Germany", homeIso: "DE",
+        away: "Ivory Coast", awayIso: "CI",
+        info: "Group E",
+        time: "Tomorrow 01:30 AM IST",
+        kickoff: `${tomorrowStr}T01:30:00+05:30`,
         streamLink: "I2g="
     },
     {
         id: 208,
-        home: "Brazil", homeIso: "BR",
-        away: "Haiti", awayIso: "HT",
-        info: "Group C",
-        time: "Tomorrow 06:00 AM IST",
-        kickoff: `${tomorrowStr}T06:00:00+05:30`,
+        home: "Ecuador", homeIso: "EC",
+        away: "Curaçao", awayIso: "CW",
+        info: "Group E",
+        time: "Tomorrow 05:30 AM IST",
+        kickoff: `${tomorrowStr}T05:30:00+05:30`,
         streamLink: "I2g="
     },
     {
         id: 209,
-        home: "Türkiye", homeIso: "TR",
-        away: "Paraguay", awayIso: "PY",
-        info: "Group D",
-        time: "Tomorrow 08:30 AM IST",
-        kickoff: `${tomorrowStr}T08:30:00+05:30`,
+        home: "Tunisia", homeIso: "TN",
+        away: "Japan", awayIso: "JP",
+        info: "Group F",
+        time: "Tomorrow 09:30 AM IST",
+        kickoff: `${tomorrowStr}T09:30:00+05:30`,
         streamLink: "I2g="
     },
     {
         id: 210,
-        home: "Netherlands", homeIso: "NL",
-        away: "Sweden", awayIso: "SE",
-        info: "Group F",
-        time: "Tomorrow 10:30 PM IST",
-        kickoff: `${tomorrowStr}T22:30:00+05:30`,
+        home: "Spain", homeIso: "ES",
+        away: "Saudi Arabia", awayIso: "SA",
+        info: "Group H",
+        time: "Tomorrow 09:30 PM IST",
+        kickoff: `${tomorrowStr}T21:30:00+05:30`,
         streamLink: "I2g="
     }
 ];
@@ -121,7 +121,7 @@ function getStreamLink(encoded) {
 // Helper to compute match status dynamically in real-time
 function getMatchStatus(match) {
     const kickoffDate = new Date(match.kickoff);
-    const diff = now - kickoffDate; // positive if kickoff is in the past
+    const diff = new Date() - kickoffDate; // positive if kickoff is in the past
 
     // If kickoff has started, and it's less than 2 hours (7200000 ms) since kickoff
     if (diff >= 0 && diff < 2 * 60 * 60 * 1000) {
