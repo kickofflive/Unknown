@@ -147,10 +147,13 @@ function startWatchCountdown() {
     const el = document.getElementById("watch-countdown");
     if (!el) return;
 
+    let timerInterval;
+
     const updateTimer = () => {
         const kickoffStr = el.getAttribute("data-kickoff");
         if (!kickoffStr || kickoffStr === "undefined" || kickoffStr === "#") {
             el.innerHTML = `<i class="fa-regular fa-clock"></i> Upcoming`;
+            if (timerInterval) clearInterval(timerInterval);
             return;
         }
 
@@ -159,8 +162,8 @@ function startWatchCountdown() {
         const diff = kickoffDate - now;
 
         if (diff <= 0) {
-            el.innerHTML = `<span class="live-dot" style="width: 8px; height: 8px; margin-right: 4px; background-color: var(--accent-green);"></span> Kickoff Time!`;
-            el.className = "hero-tag live";
+            if (timerInterval) clearInterval(timerInterval);
+            initWatchPage();
         } else {
             const days = Math.floor(diff / (1000 * 60 * 60 * 24));
             const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -180,7 +183,7 @@ function startWatchCountdown() {
     };
 
     updateTimer();
-    setInterval(updateTimer, 1000);
+    timerInterval = setInterval(updateTimer, 1000);
 }
 
 function renderError(message) {
