@@ -21,11 +21,11 @@ function getFlagUrl(isoCode) {
 const currentFixturesData = [
     {
         id: 206,
-        home: "Netherlands", homeIso: "NL",
-        away: "Sweden", awayIso: "SE",
-        info: "Group F",
-        time: "Today 10:30 PM IST",
-        kickoff: `${todayStr}T22:30:00+05:30`,
+        home: "Spain", homeIso: "ES",
+        away: "Saudi Arabia", awayIso: "SA",
+        info: "Group H",
+        time: "Today 09:30 PM IST",
+        kickoff: `${todayStr}T21:30:00+05:30`,
         streamLink: "aHR0cHM6Ly9leHRyZW1lc3BvcnRzdHYub25saW5lL3N0cmVhbS9leHRyZW1lc3BvcnRzdHYtb25saW5lLW5ldGhlcmxhbmRzLXZzLXN3ZWRlbi0xMTA1NjQ5MjU2LTgzMzQxOA=="
     },
     {
